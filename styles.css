@@ -1,0 +1,135 @@
+:root {
+  --gelo: #f6f3ee;
+  --gelo-claro: #fdfbf8;
+  --caramelo: #b27a43;
+  --caramelo-escuro: #8a5a2b;
+  --marrom: #4a3524;
+  --marrom-suave: #8b7765;
+  --borda: #e6dccf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Montserrat", sans-serif;
+  color: var(--marrom);
+
+  background-color: var(--gelo);
+  background-image:
+    linear-gradient(rgba(246, 243, 238, 0.75), rgba(246, 243, 238, 0.75)),
+    url("parquímetro.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.pagina {
+  width: 100%;
+  max-width: 480px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+
+  background: rgba(253, 251, 248, 0.92);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(74, 53, 36, 0.15);
+}
+
+h1 {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.4rem;
+  color: var(--marrom);
+}
+
+.cabecalho p {
+  margin: 8px 0 0;
+  line-height: 1.5;
+  color: var(--marrom-suave);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--marrom-suave);
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--marrom);
+  background: #fff;
+  border: 2px solid var(--borda);
+  border-radius: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--caramelo);
+}
+
+input::placeholder {
+  color: #c9bcae;
+}
+
+button {
+  margin-top: 6px;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, var(--caramelo-escuro), var(--caramelo));
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--marrom);
+  outline-offset: 2px;
+}
+
+#resultado {
+  padding: 16px;
+  line-height: 1.6;
+  white-space: pre-line; 
+  background: #f1e6d6;
+  border-radius: 12px;
+}
+
+#resultado:empty {
+  display: none;
+}
+
+#texto-rodape {
+  font-size: 0.85rem;
+  color: var(--marrom-suave);
+}
