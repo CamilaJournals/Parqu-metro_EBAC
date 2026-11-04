@@ -48,6 +48,12 @@ const resultado = document.getElementById('resultado');
 formulario.addEventListener('submit', function (event) {
   event.preventDefault();
   const valor = parseFloat(inputValor.value);
+
+  if (!Number.isFinite(valor) || valor < 0) {
+    resultado.textContent = 'Informe um valor válido e maior ou igual a zero';
+    return;
+  }
+
   const tempo = parquimetro.calcularTempo(valor);
 
   if (tempo === 0) {
@@ -55,10 +61,11 @@ formulario.addEventListener('submit', function (event) {
   } else {
     const troco = parquimetro.calcularTroco(valor);
     let mensagem = `Você pode estacionar por ${tempo} minutos.`;
-  if (troco > 0) {
-    mensagem += `\nTroco: R$ ${troco.toFixed(2)}` .replace(".", ",");
-  }
 
-  resultado.textContent = mensagem;
-}
+    if (troco > 0) {
+      mensagem += `\nTroco: R$ ${troco.toFixed(2).replace(".", ",")}`;
+    }
+
+    resultado.textContent = mensagem;
+  }
 });
